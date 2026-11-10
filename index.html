@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Webflow Code Components: accessible React components for Webflow</title>
+  <meta name="description" content="Accessible React code components for Webflow: FAQ accordion, pricing table with annual toggle, and SSR-safe stat counter, declared with declareComponent and @webflow/data-types.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b0c10%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%235b8cff%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="demo/dist/demo.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./"><span class="dot" aria-hidden="true"></span>Webflow Code Components</a>
+  <nav><a href="#declare">How they're declared</a><a href="https://github.com/mizcausevic-dev/webflow-code-components">GitHub</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Webflow code components · React · DevLink</div>
+    <h1>React components that designers configure in Webflow.</h1>
+    <p>Three production-quality components, each declared with <code>declareComponent</code> so designers get typed props in Webflow's Properties panel. All three follow WAI-ARIA patterns, render on the server without layout shift, and respect reduced-motion settings. Below they're rendered on a plain white "site" with the same props a designer would set.</p>
+  </section>
+
+  <div class="site-preview"><div id="demo-stats"></div></div>
+  <div class="site-preview"><div id="demo-pricing"></div></div>
+  <div class="site-preview"><div id="demo-faq"></div></div>
+
+  <section class="card mt-16" id="declare">
+    <h2>How a component reaches the Designer</h2>
+<pre class="code decl">// src/components/PricingTable/PricingTable.webflow.jsx
+import { declareComponent } from '@webflow/react';
+import { props } from '@webflow/data-types';
+
+export default declareComponent(WebflowPricingTable, {
+  name: 'Pricing Table',
+  group: 'Commerce',
+  props: {
+    currency: props.Variant({ name: 'Currency', options: ['USD', 'EUR', 'GBP'], defaultValue: 'USD' }),
+    annualDiscount: props.Number({ name: 'Annual discount %', defaultValue: 20, min: 0, max: 90 }),
+    plan2Link: props.Link({ name: 'Button link', group: 'Plan 2' }),   // → { href, target }
+    …
+  },
+});</pre>
+    <pre class="code mt-8">npm ci && npm test                       # SSR + logic tests
+npx webflow devlink bundle               # Webflow's CLI builds the library locally (also run in CI)
+npx webflow devlink import               # share to your Workspace (needs a Workspace API token)</pre>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <span>Built by <a href="https://github.com/mizcausevic-dev">Miz Causevic</a> · Kinetic Gain LLC</span>
+  <span>Independent project, not affiliated with or endorsed by Webflow, Inc. · MIT licensed</span>
+</div></footer>
+<script type="module" src="demo/dist/demo.js"></script>
+</body>
+</html>

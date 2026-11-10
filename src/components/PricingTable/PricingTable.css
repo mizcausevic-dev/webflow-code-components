@@ -1,0 +1,22 @@
+.wcc-pricing { font: inherit; color: inherit; }
+.wcc-pricing__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.wcc-pricing__title { margin: 0; }
+.wcc-pricing__toggle { display: flex; align-items: center; gap: 10px; font-size: .95em; }
+.wcc-pricing__toggle .is-active { font-weight: 700; }
+.wcc-pricing__toggle em { font-style: normal; color: var(--wcc-accent, #4353ff); font-weight: 600; }
+.wcc-switch { position: relative; width: 46px; height: 26px; border-radius: 999px; border: 0; background: #c3c9d6; cursor: pointer; padding: 0; }
+.wcc-switch[aria-checked="true"] { background: var(--wcc-accent, #4353ff); }
+.wcc-switch:focus-visible { outline: 2px solid var(--wcc-accent, #4353ff); outline-offset: 3px; }
+.wcc-switch__thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.wcc-switch[aria-checked="true"] .wcc-switch__thumb { transform: translateX(20px); }
+@media (prefers-reduced-motion: reduce) { .wcc-switch__thumb { transition: none; } }
+.wcc-pricing__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.wcc-plan { border: 1px solid var(--wcc-border, #d9dee8); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 8px; background: var(--wcc-surface, #fff); }
+.wcc-plan--highlight { border-color: var(--wcc-accent, #4353ff); box-shadow: 0 8px 30px rgba(67, 83, 255, .15); }
+.wcc-plan__badge { margin: 0; font-size: .75em; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--wcc-accent, #4353ff); }
+.wcc-plan__name { margin: 0; }
+.wcc-plan__price { margin: 0; } .wcc-plan__price strong { font-size: 2em; } .wcc-plan__price span { opacity: .7; }
+.wcc-plan__note { margin: 0; font-size: .85em; opacity: .75; }
+.wcc-plan__features { margin: 8px 0; padding-left: 18px; line-height: 1.7; flex: 1; }
+.wcc-plan__cta { display: inline-block; text-align: center; padding: 10px 16px; border-radius: 10px; background: var(--wcc-accent, #4353ff); color: #fff; text-decoration: none; font-weight: 600; }
+.wcc-plan__cta:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }

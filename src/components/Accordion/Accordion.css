@@ -1,0 +1,9 @@
+.wcc-accordion { font: inherit; color: inherit; max-width: 760px; }
+.wcc-accordion__item { border-bottom: 1px solid var(--wcc-border, #d9dee8); }
+.wcc-accordion--bordered .wcc-accordion__item { border: 1px solid var(--wcc-border, #d9dee8); border-radius: 10px; margin-bottom: 10px; }
+.wcc-accordion__heading { margin: 0; font-size: 1.05em; }
+.wcc-accordion__trigger { all: unset; box-sizing: border-box; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; cursor: pointer; font-weight: 600; }
+.wcc-accordion__trigger:focus-visible { outline: 2px solid var(--wcc-accent, #4353ff); outline-offset: 2px; border-radius: 8px; }
+.wcc-accordion__icon { font-size: 1.3em; line-height: 1; }
+.wcc-accordion__panel { padding: 0 18px 16px; line-height: 1.6; }
+.wcc-empty { padding: 16px; border: 1px dashed #aab; border-radius: 8px; }

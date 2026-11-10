@@ -1,0 +1,9 @@
+{
+  "library": {
+    "name": "Kinetic Gain Components",
+    "id": "kinetic-gain-components",
+    "components": [
+      "./src/**/*.webflow.@(js|jsx|mjs|ts|tsx)"
+    ]
+  }
+}

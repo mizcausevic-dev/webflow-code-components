@@ -1,0 +1,28 @@
+{
+  "name": "webflow-code-components",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Accessible React code components for Webflow.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build:test": "esbuild test/*.test.jsx --bundle --platform=node --format=esm --outdir=.test-dist --packages=external --jsx=automatic --loader:.css=empty",
+    "test": "npm run build:test && node --test .test-dist/*.test.js",
+    "build:demo": "esbuild demo/main.jsx --bundle --format=esm --minify --jsx=automatic --outfile=demo/dist/demo.js --define:process.env.NODE_ENV='\"production\"'",
+    "webflow:share": "webflow library share",
+    "start": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@webflow/data-types": "^2.9.0",
+    "@webflow/react": "^2.9.0",
+    "@webflow/webflow-cli": "^2.16.0",
+    "esbuild": "^0.28.2"
+  }
+}
