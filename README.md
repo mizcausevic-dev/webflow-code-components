@@ -58,7 +58,7 @@ npm run build:demo               # the GitHub Pages demo
 
 ## Verification status
 
-- **Tested:** 7 test suites using server-side rendering. They check APG attributes, that every `aria-controls` target exists, hidden-panel logic, heading-level clamping, pricing math and currency formatting, switch semantics, link `rel`, the SSR final value of the stat counter, the easing curve, and that every declaration module loads. CI also bundles the library with Webflow's CLI (`webflow devlink bundle` reported "Code Library bundled successfully", 773.5 KB) and fails on any production-dependency advisory. A headless-browser smoke test of the demo covers the billing toggle and single-open accordion behavior.
+- **Tested:** 7 tests using server-side rendering. They check APG attributes, that every `aria-controls` target exists, hidden-panel logic, heading-level clamping, pricing math and currency formatting, switch semantics, link `rel`, the SSR final value of the stat counter, the easing curve, and that every declaration module loads. CI also bundles the library with Webflow's CLI (`webflow devlink bundle` reported "Code Library bundled successfully", 773.5 KB) and fails on any production-dependency advisory. A headless-browser smoke test of the demo covers the billing toggle and single-open accordion behavior.
 - **Not yet tested:** importing into a live Workspace (`devlink import` needs a Workspace API token) and rendering inside the Designer canvas. Build-time dev dependencies from the Webflow CLI currently carry npm audit advisories (see [SECURITY.md](SECURITY.md)). Runtime dependencies are clean.
 
 ## License
