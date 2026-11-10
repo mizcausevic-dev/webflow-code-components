@@ -32,6 +32,7 @@ jobs:
           cp index.html _site/
           cp src/styles.css _site/src/
           cp -r demo/dist _site/demo/
+          cp -r docs _site/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

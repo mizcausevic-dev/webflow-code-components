@@ -7,7 +7,13 @@
 
 **Live demo: https://mizcausevic-dev.github.io/webflow-code-components/**
 
+[![Webflow Code Components](docs/social-card.png)](https://mizcausevic-dev.github.io/webflow-code-components/)
+
 A library of **Webflow code components**: React components declared with `declareComponent` (`@webflow/react`) and typed with `@webflow/data-types` props. Designers drop them onto the canvas and configure them in the Properties panel like native elements. CI bundles the library with **Webflow's own CLI** (`webflow devlink bundle`).
+
+## See it in action
+
+![Recording of the live demo](docs/demo.gif)
 
 ## Components
 
