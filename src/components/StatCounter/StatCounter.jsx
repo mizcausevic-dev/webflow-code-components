@@ -23,10 +23,12 @@ export function StatCounter({ value = 0, decimals = 0, prefix = '', suffix = '',
     if (!node || typeof IntersectionObserver === 'undefined') return undefined;
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
     let raf = 0;
-    setShown(0);
+    // Keep showing the server-rendered final value until the stat is actually on screen; resetting to 0 on mount
+    // would flash 0 above the fold and leave 0 showing if the observer never fires.
     const io = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       io.disconnect();
+      setShown(0);
       const start = performance.now();
       const tick = (now) => {
         setShown(valueAt(target, now - start, duration, decimals));
