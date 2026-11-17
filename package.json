@@ -20,9 +20,9 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@webflow/data-types": "^2.9.0",
-    "@webflow/react": "^2.9.0",
-    "@webflow/webflow-cli": "^2.16.0",
+    "@webflow/data-types": "^2.10.0",
+    "@webflow/react": "^2.10.0",
+    "@webflow/webflow-cli": "^2.17.0",
     "esbuild": "^0.28.2"
   }
 }
